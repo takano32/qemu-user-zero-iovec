@@ -40,6 +40,9 @@ make clean && make CC=x86_64-linux-gnu-gcc
 qemu-x86_64 ./zero-len-iovec
 ```
 
+and with a qemu built from git master `d731492832` (2026-10-24), so this is
+not specific to the released 10.2.1 package.
+
 ## Root cause
 
 `lock_iovec()` in `linux-user/syscall.c` returns `NULL` with `errno` left at
